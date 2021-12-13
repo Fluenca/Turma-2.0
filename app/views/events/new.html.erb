@@ -12,7 +12,10 @@
         <%= f.input :performers %>
         <%= f.input :guestlist %>
         <%= f.input :rider %>
-
+          <%=  f.simple_fields_for @document do |f| %>
+            <%= f.input :name%>
+            <%= f.input :photo, as: :file %>
+          <% end %>
       <% else %>
         <%= f.input :category %>
         <%= f.input :travel %>
@@ -22,9 +25,6 @@
         <%= f.input :driver %>
         <%= f.input :performers %>
       <% end %>
-
-
-
     </div>
 
       <%= f.button :submit, 'Create Event', class: "button btn-primary" %>
