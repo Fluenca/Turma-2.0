@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   belongs_to :user
 
   has_many :invitations, dependent: :destroy
+  has_many :travel_details, dependent: :destroy
+  has_many :accomodation_details, dependent: :destroy
   has_many :users, through: :invitations
   has_many :messages, dependent: :destroy
 
