@@ -40,6 +40,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @document = Document.new
   end
 
   def create
