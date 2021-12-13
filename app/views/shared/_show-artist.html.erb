@@ -70,6 +70,9 @@
     </div>
   <% end %>
 
+
+  
+
   <% unless @event.food.nil? ||  @event.food.empty?  %>
     <div class="wrapper" data-controller="food">
       <div class="close-btn mt-2 hidden" data-food-target="close" data-action="click->food#close">X</div>

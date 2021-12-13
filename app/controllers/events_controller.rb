@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     @invitation = Invitation.new
     @message = Message.new
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
+    raise
   end
 
   def edit
@@ -38,14 +39,12 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @document = Document.new
   end
 
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    @document = Document.new
-    @event.document = @document
+
     if @event.save
       redirect_to event_path(@event)
     else
