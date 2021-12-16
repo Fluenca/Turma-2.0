@@ -4,7 +4,7 @@
   <% invitations = pen_invitations > 0 ? 'new-invitations' : '' %>
     <div class = "avatar">
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill, class: invitations %>
+        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill, class: invitations, format: :png %>
       <% else %>
         <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill, class: invitations %>
       <% end %>

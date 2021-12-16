@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "dashboards", to: "dashboards#show"
   resources :events do
     resources :invitations, only: [:create, :update, :destroy ]
+    resources :documents, only: [:create, :update, :destroy ]
     resources :messages, only: [:create]
   end
 
